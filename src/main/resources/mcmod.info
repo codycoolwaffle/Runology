@@ -1,0 +1,16 @@
+[
+{
+  "modid": "runology",
+  "name": "Runology",
+  "description": "A magic mod centered around runes.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["codycoolwaffle"],
+  "credits": "Vazkii, for his code on Botania I used as lessons on how Forge works.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
