@@ -1,13 +1,13 @@
-/**
- * This class was created by <codycoolwaffle>. It's
- * distributed as part of the Runology mod. Nearly all
- * the code used in this file originates from Botania
- * made by <Vazkii>. It has been altered to work for
- * the Runology mod.
- * <p>
- * Check out the corresponding Github's here:
- * https://github.com/Vazkii/Botania
- * https://github.com/codycoolwaffle/Runology
+/*
+  This class was created by <codycoolwaffle>. It's
+  distributed as part of the Runology mod. Nearly all
+  the code used in this file originates from Botania
+  made by <Vazkii>. It has been altered to work for
+  the Runology mod.
+  
+  Check out the corresponding Github's here:
+  https://github.com/Vazkii/Botania
+  https://github.com/codycoolwaffle/Runology
  */
 
 package ccw.wafflekingdom.runology.common.block;
@@ -31,21 +31,21 @@ public class ModBlocks
 	public static final Block runeEtcher = new BlockRuneEtcher();
 	
 	@SubscribeEvent
-	public static void registerBlocks(RegistryEvent.Register<Block> event)
+	public static void registerBlocks(final RegistryEvent.Register<Block> event)
 	{
 		Runology.LOGGER.info("Registering Blocks!");
-		IForgeRegistry<Block> r = event.getRegistry();
+		final IForgeRegistry<Block> r = event.getRegistry();
 		
 		r.register(runeEtcher);
 	}
 	
 	@SubscribeEvent
-	public static void registerItemBlocks(RegistryEvent.Register<Item> event)
+	public static void registerItemBlocks(final RegistryEvent.Register<Item> event)
 	{
 		Runology.LOGGER.info("Registering ItemBlocks!");
-		IForgeRegistry<Item> r = event.getRegistry();
+		final IForgeRegistry<Item> r = event.getRegistry();
 		
-		r.register(new ItemBlockMod(runeEtcher).setRegistryName(runeEtcher.getRegistryName()));
+		r.register(new ItemBlockMod(runeEtcher));
 		
 		initTileEntities();
 	}

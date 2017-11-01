@@ -1,11 +1,11 @@
-/**
- * Nearly all the code used in this file originates
- * from Botania made by <Vazkii>. It has been altered
- * to work for Runology by <codycoolwaffle>.
- * <p>
- * Check out the corresponding Github's here:
- * https://github.com/Vazkii/Botania
- * https://github.com/codycoolwaffle/Runology
+/*
+  Nearly all the code used in this file originates
+  from Botania made by <Vazkii>. It has been altered
+  to work for Runology by <codycoolwaffle>.
+  
+  Check out the corresponding Github's here:
+  https://github.com/Vazkii/Botania
+  https://github.com/codycoolwaffle/Runology
  */
 
 package ccw.wafflekingdom.runology.common;
@@ -26,9 +26,10 @@ import ccw.wafflekingdom.runology.common.core.proxy.IProxy;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
 
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION,
-     dependencies = LibMisc.DEPENDENCIES, guiFactory = LibMisc.GUI_FACTORY)
+     /*dependencies = LibMisc.DEPENDENCIES,*/ guiFactory = LibMisc.GUI_FACTORY)
 public class Runology
 {
+	@SuppressWarnings("unused")
 	@Instance(LibMisc.MOD_ID)
 	public static Runology instance;
 	

@@ -1,13 +1,13 @@
 /**
- * This class was created by <codycoolwaffle>. It's
- * distributed as part of the Runology mod. Nearly all
- * the code used in this file originates from Botania
- * made by <Vazkii>. It has been altered to work for
- * the Runology mod.
- * <p>
- * Check out the corresponding Github's here:
- * https://github.com/Vazkii/Botania
- * https://github.com/codycoolwaffle/Runology
+ This class was created by <codycoolwaffle>. It's
+ distributed as part of the Runology mod. Nearly all
+ the code used in this file originates from Botania
+ made by <Vazkii>. It has been altered to work for
+ the Runology mod.
+ <p>
+ Check out the corresponding Github's here:
+ https://github.com/Vazkii/Botania
+ https://github.com/codycoolwaffle/Runology
  */
 
 package ccw.wafflekingdom.runology.common.item;
@@ -38,13 +38,18 @@ public abstract class ItemMod extends Item implements IModelRegister
 	
 	@Nonnull
 	@Override
-	public String getUnlocalizedNameInefficiently(@Nonnull ItemStack par1ItemStack) {
-		return super.getUnlocalizedNameInefficiently(par1ItemStack).replaceAll("item\\.", "item." + LibResources.PREFIX_MOD);
+	public String getUnlocalizedNameInefficiently(@Nonnull ItemStack par1ItemStack)
+	{
+		return super.getUnlocalizedNameInefficiently(par1ItemStack)
+		            .replaceAll("item\\.", "item." + LibResources.PREFIX_MOD);
 	}
 	
 	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerModels() {
-		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+	public void registerModels()
+	{
+		ModelLoader.setCustomModelResourceLocation(this, 0,
+		                                           new ModelResourceLocation(getRegistryName(),
+		                                                                     "inventory"));
 	}
 }

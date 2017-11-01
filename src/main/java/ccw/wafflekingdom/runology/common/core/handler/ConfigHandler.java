@@ -1,11 +1,11 @@
 /**
- * Nearly all the code used in this file originates
- * from Botania made by <Vazkii>. It has been altered
- * to work for Runology by <codycoolwaffle>.
- * <p>
- * Check out the corresponding Github's here:
- * https://github.com/Vazkii/Botania
- * https://github.com/codycoolwaffle/Runology
+ Nearly all the code used in this file originates
+ from Botania made by <Vazkii>. It has been altered
+ to work for Runology by <codycoolwaffle>.
+ <p>
+ Check out the corresponding Github's here:
+ https://github.com/Vazkii/Botania
+ https://github.com/codycoolwaffle/Runology
  */
 
 package ccw.wafflekingdom.runology.common.core.handler;
@@ -112,12 +112,11 @@ public class ConfigHandler
 	public static class ConfigAdaptor
 	{
 		
+		private final Map<String, List<AdaptableValue>> adaptableValues = new HashMap<>();
+		private final List<String> changes = new ArrayList<>();
 		private boolean enabled;
 		private int lastBuild;
 		private int currentBuild;
-		
-		private final Map<String, List<AdaptableValue>> adaptableValues = new HashMap<>();
-		private final List<String> changes = new ArrayList<>();
 		
 		public ConfigAdaptor(boolean enabled)
 		{

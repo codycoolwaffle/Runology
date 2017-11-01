@@ -1,13 +1,13 @@
 /**
- * This class was created by <codycoolwaffle>. It's
- * distributed as part of the Runology mod. Nearly all
- * the code used in this file originates from Botania
- * made by <Vazkii>. It has been altered to work for
- * the Runology mod.
- * <p>
- * Check out the corresponding Github's here:
- * https://github.com/Vazkii/Botania
- * https://github.com/codycoolwaffle/Runology
+ This class was created by <codycoolwaffle>. It's
+ distributed as part of the Runology mod. Nearly all
+ the code used in this file originates from Botania
+ made by <Vazkii>. It has been altered to work for
+ the Runology mod.
+ <p>
+ Check out the corresponding Github's here:
+ https://github.com/Vazkii/Botania
+ https://github.com/codycoolwaffle/Runology
  */
 
 package ccw.wafflekingdom.runology.client.core.handler;
@@ -37,6 +37,14 @@ import ccw.wafflekingdom.runology.common.lib.LibMisc;
 @Mod.EventBusSubscriber(Side.CLIENT)
 public final class ModelHandeler
 {
+	private static final Map<IRegistryDelegate<Block>, IStateMapper> customStateMappers
+			= ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
+	private static final DefaultStateMapper fallbackMapper = new DefaultStateMapper();
+	
+	private ModelHandeler()
+	{
+	}
+	
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent evt)
 	{
@@ -88,10 +96,6 @@ public final class ModelHandeler
 		}
 	}
 	
-	private static final Map<IRegistryDelegate<Block>, IStateMapper> customStateMappers
-			= ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
-	private static final DefaultStateMapper fallbackMapper = new DefaultStateMapper();
-	
 	private static ModelResourceLocation getMrlForState(IBlockState state)
 	{
 		return customStateMappers.getOrDefault(state.getBlock().delegate, fallbackMapper)
@@ -135,9 +139,5 @@ public final class ModelHandeler
 			ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(
 					LibMisc.MOD_ID + ":itemblock/" + metaToPath.apply(i), "inventory"));
 		}
-	}
-	
-	private ModelHandeler()
-	{
 	}
 }
