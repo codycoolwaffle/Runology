@@ -1,4 +1,4 @@
-/**
+/*
  Nearly all the code used in this file originates
  from Botania made by <Vazkii>. It has been altered
  to work for Runology by <codycoolwaffle>.

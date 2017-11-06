@@ -1,4 +1,4 @@
-/**
+/*
  This class was created by <codycoolwaffle>. It's
  distributed as part of the Runology mod. Nearly all
  the code used in this file originates from Botania

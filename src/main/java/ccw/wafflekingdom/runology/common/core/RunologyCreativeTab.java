@@ -1,10 +1,10 @@
-/**
+/*
  This class was created by <codycoolwaffle>. It's
  distributed as part of the Runology mod. Nearly all
  the code used in this file originates from Botania
  made by <Vazkii>. It has been altered to work for
  the Runology mod.
- <p>
+ 
  Check out the corresponding Github's here:
  https://github.com/Vazkii/Botania
  https://github.com/codycoolwaffle/Runology
@@ -18,8 +18,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
+import javax.annotation.Nonnull;
+
 import ccw.wafflekingdom.runology.common.Runology;
 import ccw.wafflekingdom.runology.common.block.ModBlocks;
+import ccw.wafflekingdom.runology.common.core.handler.ConfigHandler;
 import ccw.wafflekingdom.runology.common.item.ModItems;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
 
@@ -55,12 +58,21 @@ public final class RunologyCreativeTab extends CreativeTabs
 	}
 	
 	@Override
-	public void displayAllRelevantItems(NonNullList<ItemStack> p_78018_1_)
+	public void displayAllRelevantItems(@Nonnull NonNullList<ItemStack> list)
 	{
 		this.list = list;
 		
 		addBlock(ModBlocks.runeEtcher);
 		addItem(ModItems.runicTome);
+		
+		if(ConfigHandler.printDebugMessages)
+		{
+			Runology.LOGGER.info("Creative tab items:");
+			for(ItemStack s : this.list)
+			{
+				Runology.LOGGER.info(s);
+			}
+		}
 	}
 	
 	private void addItem(Item item)

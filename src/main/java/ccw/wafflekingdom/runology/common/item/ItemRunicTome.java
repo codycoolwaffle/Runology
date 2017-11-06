@@ -12,6 +12,11 @@
 
 package ccw.wafflekingdom.runology.common.item;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
 import ccw.wafflekingdom.runology.common.lib.LibItemNames;
 
 public class ItemRunicTome extends ItemMod
@@ -20,5 +25,14 @@ public class ItemRunicTome extends ItemMod
 	{
 		super(LibItemNames.RUNIC_TOME);
 		setMaxStackSize(1);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerModels()
+	{
+		ModelLoader.setCustomModelResourceLocation(this, 0,
+		                                           new ModelResourceLocation(getRegistryName(),
+		                                                                     "inventory"));
 	}
 }

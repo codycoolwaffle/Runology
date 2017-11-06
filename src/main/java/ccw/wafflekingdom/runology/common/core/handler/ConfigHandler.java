@@ -1,8 +1,8 @@
-/**
+/*
  Nearly all the code used in this file originates
  from Botania made by <Vazkii>. It has been altered
  to work for Runology by <codycoolwaffle>.
- <p>
+ 
  Check out the corresponding Github's here:
  https://github.com/Vazkii/Botania
  https://github.com/codycoolwaffle/Runology
@@ -37,6 +37,7 @@ public class ConfigHandler
 	
 	
 	public static boolean useAdaptativeConfig = true;
+	public static boolean printDebugMessages = false;
 	
 	public static int binary = 0;
 	
@@ -59,6 +60,9 @@ public class ConfigHandler
 		
 		desc = "Literally does nothing.";
 		binary = loadPropInt("runologyMisc.binary", desc, binary);
+		
+		desc = "Prints debug messages to the console.";
+		printDebugMessages = loadPropBool("debugMessages.enabled", desc, printDebugMessages);
 		
 	}
 	

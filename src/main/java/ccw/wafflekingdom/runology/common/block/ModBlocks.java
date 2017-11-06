@@ -16,6 +16,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -26,6 +27,7 @@ import ccw.wafflekingdom.runology.common.item.block.ItemBlockMod;
 import ccw.wafflekingdom.runology.common.lib.LibBlockNames;
 import ccw.wafflekingdom.runology.common.tile.TileSimpleInventory;
 
+@Mod.EventBusSubscriber
 public class ModBlocks
 {
 	public static final Block runeEtcher = new BlockRuneEtcher();
@@ -45,7 +47,7 @@ public class ModBlocks
 		Runology.LOGGER.info("Registering ItemBlocks!");
 		final IForgeRegistry<Item> r = event.getRegistry();
 		
-		r.register(new ItemBlockMod(runeEtcher));
+		r.register(new ItemBlockMod(runeEtcher).setRegistryName(runeEtcher.getRegistryName()));
 		
 		initTileEntities();
 	}

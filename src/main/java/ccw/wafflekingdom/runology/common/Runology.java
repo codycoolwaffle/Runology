@@ -26,7 +26,7 @@ import ccw.wafflekingdom.runology.common.core.proxy.IProxy;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
 
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION,
-     /*dependencies = LibMisc.DEPENDENCIES,*/ guiFactory = LibMisc.GUI_FACTORY)
+     dependencies = LibMisc.DEPENDENCIES, useMetadata = true)
 public class Runology
 {
 	@SuppressWarnings("unused")

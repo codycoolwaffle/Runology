@@ -17,7 +17,7 @@ public final class LibMisc
 	public static final String MOD_NAME = "Runology";
 	public static final String BUILD = "1.12.2-14.23.0.2491";
 	public static final String VERSION = "0.0";
-	//public static final String DEPENDENCIES = "";
+	public static final String DEPENDENCIES = "required-after:forge@[14.23.0.2491,)";
 	
 	// Network Constants
 	//public static final String NETWORK_CHANNEL = MOD_ID;
@@ -27,7 +27,7 @@ public final class LibMisc
 			= "ccw.wafflekingdom.runology.common.core.proxy.ServerProxy";
 	public static final String PROXY_CLIENT
 			= "ccw.wafflekingdom.runology.client.core.proxy.ClientProxy";
-	public static final String GUI_FACTORY
-			= "ccw.wafflekingdom.runology.client.core.proxy.GuiFactory";
+	//public static final String GUI_FACTORY
+	//= "ccw.wafflekingdom.runology.client.core.proxy.GuiFactory";
 	
 }
