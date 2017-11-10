@@ -12,29 +12,28 @@
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-package ccw.wafflekingdom.runology.common.item;
+package ccw.wafflekingdom.runology.api.internal;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import ccw.wafflekingdom.runology.common.lib.LibItemNames;
+import ccw.wafflekingdom.runology.api.tome.TomePage;
 
-public class ItemRunicTome extends ItemMod
+/**
+ A dummy page. It does absolutely nothing and is only
+ existent to make sure everything goes right even if
+ Runology isn't loaded.
+ */
+public class BakaPage extends TomePage
 {
-	public ItemRunicTome()
+	public BakaPage(String unlocalizedName)
 	{
-		super(LibItemNames.RUNIC_TOME);
-		setMaxStackSize(1);
+		super(unlocalizedName);
 	}
 	
-	@SideOnly(Side.CLIENT)
 	@Override
-	public void registerModels()
+	@SideOnly(Side.CLIENT)
+	public void renderScreen(IGuiTomeEntry gui, int mx, int my)
 	{
-		ModelLoader.setCustomModelResourceLocation(this, 0,
-		                                           new ModelResourceLocation(getRegistryName(),
-		                                                                     "inventory"));
 	}
 }

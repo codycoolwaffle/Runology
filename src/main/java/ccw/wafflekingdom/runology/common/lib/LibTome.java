@@ -12,9 +12,11 @@
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-package ccw.wafflekingdom.runology.common.tile;
+package ccw.wafflekingdom.runology.common.lib;
 
-public class TileRuneEtcher extends TileSimpleInventory
+public final class LibTome
 {
+	public static final String CATEGORY_PREFIX = "runology.category.";
 	
+	public static final String CATEGORY_BASICS = "basics";
 }

@@ -12,9 +12,25 @@
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-package ccw.wafflekingdom.runology.common.tile;
+package ccw.wafflekingdom.runology.api.tome;
 
-public class TileRuneEtcher extends TileSimpleInventory
+import net.minecraft.util.text.TextFormatting;
+
+public class KnowledgeType
 {
+	public final String id;
+	public final TextFormatting color;
+	public final boolean autoUnlock;
 	
+	public KnowledgeType(String id, TextFormatting color, boolean autoUnlock)
+	{
+		this.id = id;
+		this.color = color;
+		this.autoUnlock = autoUnlock;
+	}
+	
+	public String getUnlocalizedName()
+	{
+		return "runology.knowledge." + id;
+	}
 }

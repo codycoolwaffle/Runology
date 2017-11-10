@@ -12,9 +12,26 @@
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-package ccw.wafflekingdom.runology.common.tile;
+package ccw.wafflekingdom.runology.api.internal;
 
-public class TileRuneEtcher extends TileSimpleInventory
+import ccw.wafflekingdom.runology.api.tome.TomePage;
+
+public class BakaMethodHandler implements IInternalMethodHandler
 {
+	@Override
+	public TomePage textPage(String key)
+	{
+		return bakaPage(key);
+	}
 	
+	@Override
+	public TomePage imagePage(String key, String resource)
+	{
+		return null;
+	}
+	
+	private TomePage bakaPage(String key)
+	{
+		return new BakaPage(key);
+	}
 }

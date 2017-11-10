@@ -12,9 +12,11 @@
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-package ccw.wafflekingdom.runology.common.tile;
+package ccw.wafflekingdom.runology.common.core.handler;
 
-public class TileRuneEtcher extends TileSimpleInventory
+import ccw.wafflekingdom.runology.api.internal.BakaMethodHandler;
+
+public class InternalMethodHandler extends BakaMethodHandler
 {
-	
+
 }

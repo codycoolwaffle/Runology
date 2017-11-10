@@ -1,13 +1,17 @@
 /*
   Nearly all the code used in this file originates
   from Botania made by <Vazkii>. It has been altered
-  to work for Runology by <codycoolwaffle>.
+  to work for, and distributed as part of,
+  the Runology mod created by <codycoolwaffle>.
+  
+  Runology is Open Source and distributed under a
+  Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
+  http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
   
   Check out the corresponding Github's here:
   https://github.com/Vazkii/Botania
   https://github.com/codycoolwaffle/Runology
  */
-
 package ccw.wafflekingdom.runology.common;
 
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +28,7 @@ import org.apache.logging.log4j.Logger;
 import ccw.wafflekingdom.runology.common.core.handler.ConfigHandler;
 import ccw.wafflekingdom.runology.common.core.proxy.IProxy;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
+import ccw.wafflekingdom.runology.common.tome.TomeData;
 
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION,
      dependencies = LibMisc.DEPENDENCIES, useMetadata = true)
@@ -50,6 +55,7 @@ public class Runology
 	public void init(FMLInitializationEvent event)
 	{
 		LOGGER.info("Initializing!");
+		TomeData.init();
 		proxy.init(event);
 	}
 	
