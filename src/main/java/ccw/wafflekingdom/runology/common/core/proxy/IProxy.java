@@ -14,9 +14,12 @@
  */
 package ccw.wafflekingdom.runology.common.core.proxy;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import ccw.wafflekingdom.runology.api.tome.TomeEntry;
 
 public interface IProxy
 {
@@ -25,6 +28,10 @@ public interface IProxy
 	void init(FMLInitializationEvent event);
 	
 	void postInit(FMLPostInitializationEvent event);
+	
+	void setEntryToOpen(TomeEntry entry);
+	
+	void setTomeStack(ItemStack stack);
 	
 	String getLastVersion();
 }

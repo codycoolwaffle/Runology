@@ -21,17 +21,21 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ccw.wafflekingdom.runology.api.RunologyAPI;
 import ccw.wafflekingdom.runology.common.core.handler.ConfigHandler;
+import ccw.wafflekingdom.runology.common.core.handler.InternalMethodHandler;
 import ccw.wafflekingdom.runology.common.core.proxy.IProxy;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
+import ccw.wafflekingdom.runology.common.network.GuiHandler;
 import ccw.wafflekingdom.runology.common.tome.TomeData;
 
 @Mod(modid = LibMisc.MOD_ID, name = LibMisc.MOD_NAME, version = LibMisc.VERSION,
-     dependencies = LibMisc.DEPENDENCIES, useMetadata = true)
+     dependencies = LibMisc.DEPENDENCIES, guiFactory = LibMisc.GUI_FACTORY, useMetadata = true)
 public class Runology
 {
 	@SuppressWarnings("unused")
@@ -46,7 +50,7 @@ public class Runology
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		LOGGER.info("Pre-Initializing!");
+		LOGGER.info("Pre-Initializing!"); RunologyAPI.internalHandler = new InternalMethodHandler();
 		ConfigHandler.loadConfig(event.getSuggestedConfigurationFile());
 		proxy.preInit(event);
 	}
@@ -56,6 +60,7 @@ public class Runology
 	{
 		LOGGER.info("Initializing!");
 		TomeData.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(Runology.instance, new GuiHandler());
 		proxy.init(event);
 	}
 	

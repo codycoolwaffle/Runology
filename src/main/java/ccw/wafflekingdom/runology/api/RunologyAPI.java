@@ -21,6 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import ccw.wafflekingdom.runology.api.internal.BakaMethodHandler;
+import ccw.wafflekingdom.runology.api.internal.IInternalMethodHandler;
 import ccw.wafflekingdom.runology.api.tome.KnowledgeType;
 import ccw.wafflekingdom.runology.api.tome.TomeCategory;
 import ccw.wafflekingdom.runology.api.tome.TomeEntry;
@@ -41,6 +43,13 @@ public class RunologyAPI
 	{
 		basicKnowledge = registerKnowledgeType("minecraft", TextFormatting.RESET, true);
 	}
+	
+	/**
+	 The internal method handler in use.
+	 
+	 @see IInternalMethodHandler
+	 */
+	public static IInternalMethodHandler internalHandler = new BakaMethodHandler();
 	
 	/**
 	 Registers a new knowledge type.
@@ -77,7 +86,7 @@ public class RunologyAPI
 	/**
 	 Gets all registered entries.
 	 */
-	public static List<TomeEntry> getAllEntries()
+	public static List<TomeEntry> getEntries()
 	{
 		return allEntries;
 	}

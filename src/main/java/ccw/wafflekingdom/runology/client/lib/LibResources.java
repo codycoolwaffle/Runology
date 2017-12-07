@@ -33,4 +33,8 @@ public final class LibResources
 	public static final String EMTPY_TEXTURE = "emptyTexture";
 	
 	public static final String GUI_CREATIVE = "runology.png";
+	public static final String GUI_TOME = PREFIX_GUI + "tome.png";
+	public static final String GUI_STENCIL = PREFIX_GUI + "stencil.png";
+	
+	public static final String CATEGORY_INDEX = PREFIX_CATEGORIES + "index.png";
 }

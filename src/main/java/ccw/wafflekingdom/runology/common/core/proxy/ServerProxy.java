@@ -14,10 +14,12 @@
  */
 package ccw.wafflekingdom.runology.common.core.proxy;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import ccw.wafflekingdom.runology.api.tome.TomeEntry;
 import ccw.wafflekingdom.runology.common.lib.LibMisc;
 
 public class ServerProxy implements IProxy
@@ -35,6 +37,18 @@ public class ServerProxy implements IProxy
 	@Override
 	public void postInit(FMLPostInitializationEvent event)
 	{
+	}
+	
+	@Override
+	public void setEntryToOpen(TomeEntry entry)
+	{
+	
+	}
+	
+	@Override
+	public void setTomeStack(ItemStack stack)
+	{
+	
 	}
 	
 	@Override

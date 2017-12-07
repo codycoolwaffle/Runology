@@ -43,6 +43,9 @@ public class ConfigHandler
 	public static boolean useAdaptativeConfig = true;
 	public static boolean printDebugMessages = false;
 	
+	public static boolean useShaders = true;
+	public static int glSecondaryTextureUnit = 7;
+	
 	public static int binary = 0;
 	
 	public static void loadConfig(File configFile)

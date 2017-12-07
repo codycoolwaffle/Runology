@@ -31,7 +31,7 @@ public final class LibMisc
 			= "ccw.wafflekingdom.runology.common.core.proxy.ServerProxy";
 	public static final String PROXY_CLIENT
 			= "ccw.wafflekingdom.runology.client.core.proxy.ClientProxy";
-	//public static final String GUI_FACTORY
-	//= "ccw.wafflekingdom.runology.client.core.proxy.GuiFactory";
+	public static final String GUI_FACTORY
+			= "ccw.wafflekingdom.runology.client.core.proxy.GuiFactory";
 	
 }
