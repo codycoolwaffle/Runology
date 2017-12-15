@@ -14,6 +14,8 @@
  */
 package ccw.wafflekingdom.runology.client.core.handler;
 
+import ccw.wafflekingdom.runology.client.gui.tome.GuiTome;
+import ccw.wafflekingdom.runology.common.lib.LibMisc;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.common.Mod;
@@ -21,9 +23,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-import ccw.wafflekingdom.runology.client.gui.tome.GuiTome;
-
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = LibMisc.MOD_ID)
 public final class ClientTickHandler
 {
 	private ClientTickHandler(){}

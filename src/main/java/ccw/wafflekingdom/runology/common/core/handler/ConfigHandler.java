@@ -14,6 +14,8 @@
  */
 package ccw.wafflekingdom.runology.common.core.handler;
 
+import ccw.wafflekingdom.runology.common.Runology;
+import ccw.wafflekingdom.runology.common.lib.LibMisc;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
@@ -30,9 +32,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import ccw.wafflekingdom.runology.common.Runology;
-import ccw.wafflekingdom.runology.common.lib.LibMisc;
 
 public class ConfigHandler
 {
@@ -285,8 +284,8 @@ public class ConfigHandler
 		}
 		
 	}
-	
-	@Mod.EventBusSubscriber
+
+	@Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
 	public static class ChangeListener
 	{
 		

@@ -14,15 +14,15 @@
  */
 package ccw.wafflekingdom.runology.common.item;
 
+import ccw.wafflekingdom.runology.common.Runology;
+import ccw.wafflekingdom.runology.common.lib.LibMisc;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import ccw.wafflekingdom.runology.common.Runology;
-
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
 public final class ModItems
 {
 	public static final Item runicTome = new ItemRunicTome();

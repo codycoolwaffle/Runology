@@ -14,6 +14,8 @@
  */
 package ccw.wafflekingdom.runology.client.core.handler;
 
+import ccw.wafflekingdom.runology.client.render.IModelRegister;
+import ccw.wafflekingdom.runology.common.lib.LibMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -33,10 +35,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.function.IntFunction;
 
-import ccw.wafflekingdom.runology.client.render.IModelRegister;
-import ccw.wafflekingdom.runology.common.lib.LibMisc;
-
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = LibMisc.MOD_ID)
 public final class ModelHandeler
 {
 	private static final Map<IRegistryDelegate<Block>, IStateMapper> customStateMappers

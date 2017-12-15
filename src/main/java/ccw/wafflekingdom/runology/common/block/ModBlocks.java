@@ -14,6 +14,12 @@
  */
 package ccw.wafflekingdom.runology.common.block;
 
+import ccw.wafflekingdom.runology.client.lib.LibResources;
+import ccw.wafflekingdom.runology.common.Runology;
+import ccw.wafflekingdom.runology.common.item.block.ItemBlockMod;
+import ccw.wafflekingdom.runology.common.lib.LibBlockNames;
+import ccw.wafflekingdom.runology.common.lib.LibMisc;
+import ccw.wafflekingdom.runology.common.tile.TileSimpleInventory;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
@@ -23,13 +29,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import ccw.wafflekingdom.runology.client.lib.LibResources;
-import ccw.wafflekingdom.runology.common.Runology;
-import ccw.wafflekingdom.runology.common.item.block.ItemBlockMod;
-import ccw.wafflekingdom.runology.common.lib.LibBlockNames;
-import ccw.wafflekingdom.runology.common.tile.TileSimpleInventory;
-
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = LibMisc.MOD_ID)
 public class ModBlocks
 {
 	public static final Block runeEtcher = new BlockRuneEtcher();
