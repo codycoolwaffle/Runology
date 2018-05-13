@@ -1,0 +1,22 @@
+# MISC
+itemGroup.runology=Runology
+
+# ITEM NAMES
+item.runology:runicTome.name=Runic Tome
+
+# BLOCK NAMES
+tile.runology:runeEtcher.name=Rune Etcher
+
+# GUI TEXT
+runology.gui.tome.header=Runic Tome, Table of Contents
+
+# TOME CATEGORIES
+runology.category.basics=Basic Concepts
+runology.category.aura=Basic Concepts
+runology.category.auraProducers=Basic Concepts
+runology.category.auraConsumers=Basic Concepts
+runology.category.mechanisms=Basic Concepts
+runology.category.tools=Basic Concepts
+runology.category.accessories=Basic Concepts
+runology.category.runes=Basic Concepts
+runology.category.misc=Basic Concepts

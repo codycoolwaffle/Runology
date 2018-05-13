@@ -38,6 +38,14 @@ public class RunologyAPI
 	
 	//All of these categories are initialized during Runology's PreInit stage.
 	public static TomeCategory categoryBasics;
+	public static TomeCategory categoryAura;
+	public static TomeCategory categoryAuraProducers;
+	public static TomeCategory categoryAuraConsumers;
+	public static TomeCategory categoryMechanisms;
+	public static TomeCategory categoryTools;
+	public static TomeCategory categoryAccessories;
+	public static TomeCategory categoryRunes;
+	public static TomeCategory categoryMisc;
 	
 	static
 	{

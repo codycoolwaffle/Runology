@@ -77,6 +77,10 @@ public class TomeEntry implements Comparable<TomeEntry>
 	 Sets the display icon for this entry. Overriding the one already there. When adding recipe pages to the
 	 entry, this will be called once for the result of the first found recipe.
 	 */
+	public void setIcon(ItemStack stack)
+	{
+		icon = stack;
+	}
 	public ItemStack getIcon()
 	{
 		return icon;

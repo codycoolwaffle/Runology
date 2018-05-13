@@ -19,4 +19,14 @@ public final class LibTome
 	public static final String CATEGORY_PREFIX = "runology.category.";
 	
 	public static final String CATEGORY_BASICS = "basics";
+	public static final String CATEGORY_AURA = "aura";
+	public static final String CATEGORY_AURA_PRODUCERS = "auraProducers";
+	public static final String CATEGORY_AURA_CONSUMERS = "auraConsumers";
+	public static final String CATEGORY_MECHANISMS = "mechanisms";
+	public static final String CATEGORY_TOOLS = "tools";
+	public static final String CATEGORY_ACCESSORIES = "accessories";
+	public static final String CATEGORY_RUNES = "runes";
+	public static final String CATEGORY_MISC = "misc";
+	
+	public static final String BASICS_WELCOME = "welcome";
 }

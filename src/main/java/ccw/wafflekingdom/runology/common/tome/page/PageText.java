@@ -28,7 +28,7 @@ import ccw.wafflekingdom.runology.api.tome.TomePage;
 
 public class PageText extends TomePage
 {
-	PageText(String unlocalizedName)
+	public PageText(String unlocalizedName)
 	{
 		super(unlocalizedName);
 	}
@@ -44,69 +44,52 @@ public class PageText extends TomePage
 		renderText(x, y, width, gui.getHeight(), getUnlocalizedName());
 	}
 	
+	@SideOnly(Side.CLIENT)
 	public static void renderText(int x, int y, int width, int height, String unlocalizedText)
 	{
 		renderText(x, y, width, height, 10, true, 0, unlocalizedText);
 	}
 	
-	public static void renderText(int x, int y, int width, int height, int paragraphSize,
-	                              boolean useUnicode, int color, String unlocalizedText)
+	@SideOnly(Side.CLIENT)
+	public static void renderText(int x, int y, int width, int height, int paragraphSize, boolean useUnicode, int color, String unlocalizedText)
 	{
-		x += 2;
-		y += 10;
-		width -= 4;
-		FontRenderer font = Minecraft.getMinecraft().fontRenderer;
-		boolean unicode = font.getUnicodeFlag();
-		if(useUnicode)
-		{
-			font.setUnicodeFlag(true);
-		}
-		String text = I18n.format(unlocalizedText).replaceAll("&", "\u00a7");
+		x += 2; y += 10; width -= 4; FontRenderer font = Minecraft.getMinecraft().fontRenderer;
+		boolean unicode = font.getUnicodeFlag(); if(useUnicode)
+	{
+		font.setUnicodeFlag(true);
+	} String text = I18n.format(unlocalizedText).replaceAll("&", "\u00a7");
 		String[] textEntries = text.split("<br>");
 		
 		List<List<String>> lines = new ArrayList<>();
 		
-		String controlCodes;
-		for(String s : textEntries)
+		String controlCodes; for(String s : textEntries)
+	{
+		List<String> words = new ArrayList<>(); String lineStr = ""; String[] tokens = s.split(" ");
+		for(String token : tokens)
 		{
-			List<String> words = new ArrayList<>();
-			String lineStr = "";
-			String[] tokens = s.split(" ");
-			for(String token : tokens)
-			{
-				String prev = lineStr;
-				String spaced = token + " ";
-				lineStr += spaced;
-				
-				controlCodes = toControlCodes(getControlCodes(prev));
-				if(font.getStringWidth(lineStr) > width)
-				{
-					lines.add(words);
-					lineStr = controlCodes + spaced;
-					words = new ArrayList<>();
-				}
-				
-				words.add(controlCodes + token);
-			}
+			String prev = lineStr; String spaced = token + " "; lineStr += spaced;
 			
-			if(!lineStr.isEmpty())
-			{
-				lines.add(words);
-			}
-			lines.add(new ArrayList<>());
+			controlCodes = toControlCodes(getControlCodes(prev)); if(font.getStringWidth(lineStr) > width)
+		{
+			lines.add(words); lineStr = controlCodes + spaced; words = new ArrayList<>();
+		}
+			
+			words.add(controlCodes + token);
 		}
 		
-		int i = 0;
-		for(List<String> words : lines)
+		if(!lineStr.isEmpty())
 		{
-			words.size();
-			int xi = x;
-			int spacing = 4;
-			int wcount = words.size();
-			int compensationSpaces = 0;
-			
-			
-			//TODO: add justified text to the tome
+			lines.add(words);
+		} lines.add(new ArrayList<>());
+	}
+		
+		int i = 0; for(List<String> words : lines)
+	{
+		words.size(); int xi = x; int spacing = 4; int wcount = words.size();
+		int compensationSpaces = 0;
+		
+		
+		//TODO: add justified text to the tome
 			/*boolean justify = ConfigHandler.tomeJustifiedText && wcount > 0 && lines.size() > i && !lines.get(i + 1).isEmpty();
 			
 			if(justify) {
@@ -117,22 +100,17 @@ public class PageText extends TomePage
 				spacing = wcount == 1 ? 0 : space / (wcount - 1);
 				compensationSpaces = wcount == 1 ? 0 : space % (wcount - 1);
 			}*/
-			
-			for(String s : words)
-			{
-				int extra = 0;
-				if(compensationSpaces > 0)
-				{
-					compensationSpaces--;
-					extra++;
-				}
-				font.drawString(s, xi, y, color);
-				xi += font.getStringWidth(s) + spacing + extra;
-			}
-			
-			y += words.isEmpty() ? paragraphSize : 10;
-			i++;
+		
+		for(String s : words)
+		{
+			int extra = 0; if(compensationSpaces > 0)
+		{
+			compensationSpaces--; extra++;
+		} font.drawString(s, xi, y, color); xi += font.getStringWidth(s) + spacing + extra;
 		}
+		
+		y += words.isEmpty() ? paragraphSize : 10; i++;
+	}
 		
 		font.setUnicodeFlag(unicode);
 	}
